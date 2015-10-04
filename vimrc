@@ -75,6 +75,7 @@ let NERDTreeShowHidden=1    " show hidden files in NERDTree
 
 " enable spell check when writing commit messages
 autocmd filetype git,*commit* setlocal spell
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " status line
 set statusline=%*
