@@ -91,5 +91,5 @@ set statusline+=c%c\ 	" column number
 set statusline+=\ %l,%L	" current line number, number of lines
 set statusline+=\ %P		" percentage through file
 
-hi User1 term=bold cterm=bold ctermfg=blue ctermbg=white
+hi User1 term=bold cterm=bold ctermfg=blue ctermbg=19
 
