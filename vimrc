@@ -12,7 +12,7 @@ set smartindent     " smart indenting works like autoindent but recognizes some
 set cindent         " works more cleverly than the previous two indents
 set autoread        " automatically reload files when changed on disk
 set backupcopy=yes  " create a backup of files
-set clipboard=unnamed   " use system clipboard
+set clipboard=unnamed	" use system clipboard
 set directory-=.    " don't store swap files in the current directory
 set ignorecase      " case insensitive searching
 set smartcase       " use case sensitive search if there are any caps
@@ -20,7 +20,7 @@ set incsearch       " search as you type
 set hlsearch        " highlight search
 set laststatus=2    " always show statusline
 set list            " show whitespace
-set listchars=tab:↦\ ,trail:⋅
+set listchars=tab:→\ ,trail:⋅
 set ruler           " show cursor position in file
 set scrolloff=3     " minimum number of lines to keep above/below cursor
 set tabstop=4       " use a mix of tabs and spaces for to align to the closest
@@ -47,6 +47,9 @@ set nofoldenable	" don't fold by default
 set t_Co=256		" terminal has 256 colors
 set spelllang=en_us	" use US english dictionary for spell checking
 set cino+=(0		" align wrapped function arguments
+set textwidth=80	" 80 columns used to place color column
+filetype plugin on
+filetype plugin indent on
 
 if v:version >= 703
 	set undodir=~/.vim/undofiles
