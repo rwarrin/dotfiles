@@ -33,7 +33,7 @@ git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shel
 echo "done"
 
 echo "Installing Base16 Vim colorschemes..."
-git clone git://github.com/chriskempson/base16-vim.git ~/.vim/colors/base16
+git clone https://github.com/chriskempson/base16-vim.git ~/.vim/colors/base16
 cp ~/.vim/colors/base16/colors/*.vim ~/.vim/colors/
 echo "done"
 
