@@ -1,8 +1,9 @@
+#!/bin/bash
 
 # variables
-dir = ~/.environment
-oldfiles_dir = ~/dotfiles_old
-files = "bashrc vimrc"
+dir=`pwd`
+oldfiles_dir=~/dotfiles_old
+files="bashrc vimrc"
 
 echo -n "Creating $oldfiles_dir for backup of existing dotfiles in ~ ..."
 mkdir -p $oldfiles_dir
@@ -15,7 +16,7 @@ done
 echo "done"
 
 for file in $files; do
-	echo -n "Creating symlink to $file in home directory..."
+	echo -n "Creating symlink to $dir/$file in home directory..."
 	ln -s $dir/$file ~/.$file
 	echo "done"
 done
@@ -29,6 +30,11 @@ echo "done"
 
 echo "Installing Base16-Shell..."
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+echo "done"
+
+echo "Installing Base16 Vim colorschemes..."
+git clone git://github.com/chriskempson/base16-vim.git ~/.vim/colors/base16
+cp ~/.vim/colors/base16/colors/*.vim ~/.vim/colors/
 echo "done"
 
 echo "Installation complete!"
