@@ -3,7 +3,7 @@
 # variables
 dir=`pwd`
 oldfiles_dir=~/dotfiles_old
-files="bashrc vimrc"
+files="bashrc vimrc tmux.conf"
 
 echo -n "Creating $oldfiles_dir for backup of existing dotfiles in ~ ..."
 mkdir -p $oldfiles_dir
