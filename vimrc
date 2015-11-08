@@ -48,6 +48,7 @@ set t_Co=256		" terminal has 256 colors
 set spelllang=en_us	" use US english dictionary for spell checking
 set cino+=(0		" align wrapped function arguments
 set textwidth=80	" 80 columns used to place color column
+set formatoptions-=t	" disable automatic text wrapping at text width setting
 filetype plugin on
 filetype plugin indent on
 
