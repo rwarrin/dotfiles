@@ -17,7 +17,7 @@ echo "done"
 
 for file in $files; do
 	echo -n "Creating symlink to $dir/$file in home directory..."
-	ln -s $dir/$file ~/.$file
+	ln -sfn $dir/$file ~/.$file
 	echo "done"
 done
 
