@@ -73,6 +73,9 @@ nmap <leader>d :NERDTreeToggle<CR>
 nmap <leader>s :sort<CR>
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo '~/.vimrc reloaded'"<CR>
 nmap <leader>gt :GitGutterToggle<CR>
+nnoremap ]q :cnext<CR>
+nnoremap [q :cprev<CR>
+nnoremap <leader>e :copen<CR>
 
 " plugin settings
 let NERDTreeShowHidden=1    " show hidden files in NERDTree
