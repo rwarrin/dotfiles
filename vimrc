@@ -77,6 +77,8 @@ nmap <leader>gt :GitGutterToggle<CR>
 nnoremap ]q :cnext<CR>
 nnoremap [q :cprev<CR>
 nnoremap <leader>e :copen<CR>
+nmap <C-j> 5j<CR>
+nmap <C-k> 5k<CR>
 
 " plugin settings
 let NERDTreeShowHidden=1    " show hidden files in NERDTree
@@ -103,3 +105,5 @@ set statusline+=\ %P		" percentage through file
 
 hi User1 term=bold cterm=bold ctermfg=blue ctermbg=19
 
+syn match myNote contained "\<\TODO"
+hi myNote ctermfg=green
