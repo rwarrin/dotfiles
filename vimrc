@@ -77,8 +77,8 @@ nmap <leader>gt :GitGutterToggle<CR>
 nnoremap ]q :cnext<CR>
 nnoremap [q :cprev<CR>
 nnoremap <leader>e :copen<CR>
-nmap <C-j> 5j<CR>
-nmap <C-k> 5k<CR>
+nmap <S-j> 10j<CR>
+nmap <S-k> 10k<CR>
 
 " plugin settings
 let NERDTreeShowHidden=1    " show hidden files in NERDTree
