@@ -10,17 +10,17 @@ set smartindent     " smart indenting works like autoindent but recognizes some
                     " C syntax to increase/decreased indent (overrides
                     " autoindent)
 set cindent         " works more cleverly than the previous two indents
-set autoread        " automatically reload files when changed on disk
+"set autoread        " automatically reload files when changed on disk
 set backupcopy=yes  " create a backup of files
 set clipboard=unnamed	" use system clipboard
-set directory-=.    " don't store swap files in the current directory
+set directory-=$VIM/swap//    " don't store swap files in the current directory
 set ignorecase      " case insensitive searching
 set smartcase       " use case sensitive search if there are any caps
 set incsearch       " search as you type
 set hlsearch        " highlight search
 set laststatus=2    " always show statusline
-set list            " show whitespace
-set listchars=tab:→\ ,trail:⋅
+"set list            " show whitespace
+"set listchars=tab:?\ ,trail:·
 set ruler           " show cursor position in file
 set scrolloff=3     " minimum number of lines to keep above/below cursor
 set tabstop=4       " use a mix of tabs and spaces for to align to the closest
@@ -50,11 +50,12 @@ set cino+=(0		" align wrapped function arguments
 set textwidth=80	" 80 columns used to place color column
 set formatoptions-=t	" disable automatic text wrapping at text width setting
 set cursorline		" highlight current line
+set backspace=2		" backspace everything in insert mode
 filetype plugin on
 filetype plugin indent on
 
 if v:version >= 703
-	set undodir=~/.vim/undofiles
+	set undodir=$VIM/swap
 	set undofile
 
 	set colorcolumn=+1
@@ -62,7 +63,7 @@ endif
 
 " base16 color scheme settings
 let base16colorspace=256
-colorscheme base16-default
+colorscheme base16-default-dark
 
 " keyboard shortcuts
 let mapleader=','
@@ -72,13 +73,18 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 nmap <leader>d :NERDTreeToggle<CR>
 nmap <leader>s :sort<CR>
-map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo '~/.vimrc reloaded'"<CR>
+map <silent> <leader>V :source D:/Development/Vim/_vimrc<CR>:filetype detect<CR>:exe ":echo '_vimrc reloaded'"<CR>
 nmap <leader>gt :GitGutterToggle<CR>
 nnoremap ]q :cnext<CR>
 nnoremap [q :cprev<CR>
 nnoremap <leader>e :copen<CR>
+nnoremap <leader>E :cclose<CR>
 nmap <S-j> 10j<CR>
 nmap <S-k> 10k<CR>
+map <leader>b :make<CR><CR>
+nnoremap <M-left> :bp<CR>
+nnoremap <M-right> :bn<CR>
+nnoremap <S-F8> :TagbarToggle<CR>
 
 " plugin settings
 let NERDTreeShowHidden=1    " show hidden files in NERDTree
@@ -102,8 +108,3 @@ set statusline+=[%{&fo}]\ 	" show format options
 set statusline+=c%c\ 	" column number
 set statusline+=\ %l,%L	" current line number, number of lines
 set statusline+=\ %P		" percentage through file
-
-hi User1 term=bold cterm=bold ctermfg=blue ctermbg=19
-
-syn match myNote contained "\<\TODO"
-hi myNote ctermfg=green
