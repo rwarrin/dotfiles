@@ -55,7 +55,7 @@ filetype plugin on
 filetype plugin indent on
 
 " better autocomplete
-set complete=.,w,b,u,t,i,kspell
+set complete=.,w,b,u,t,i
 set completeopt=menu,menuone,preview,noinsert
 
 if v:version >= 703
