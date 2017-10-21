@@ -85,7 +85,7 @@ nnoremap <leader>e :copen<CR>
 nnoremap <leader>E :cclose<CR>
 nmap <S-j> 10j<CR>
 nmap <S-k> 10k<CR>
-map <leader>b :make<CR><CR>
+map <leader>b :make!<CR><CR>
 nnoremap <M-left> :bp<CR>
 nnoremap <M-right> :bn<CR>
 nnoremap <S-F8> :TagbarToggle<CR>
