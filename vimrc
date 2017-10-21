@@ -54,6 +54,10 @@ set backspace=2		" backspace everything in insert mode
 filetype plugin on
 filetype plugin indent on
 
+" better autocomplete
+set complete=.,w,b,u,t,i,kspell
+set completeopt=menu,menuone,preview,noinsert
+
 if v:version >= 703
 	set undodir=$VIM/swap
 	set undofile
