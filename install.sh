@@ -27,6 +27,7 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 git clone https://github.com/airblade/vim-gitgutter.git ~/.vim/bundle/vim-gitgutter
 git clone https://github.com/kien/ctrlp.vim ~/.vim/bundle/ctrlp.vim
+git clone https://github.com/majutsushi/tagbar ~/.vim/bundle/tagbar
 echo "done"
 
 echo "Installing Base16-Shell..."
