@@ -2,6 +2,7 @@
 " execute pathogen
 execute pathogen#infect()
 
+let HOME=$VIM       " set home directory
 set nocompatible    " disable vi compatibility
 syntax enable       " enable syntax highlighting
 set number          " show line numbers
@@ -12,8 +13,11 @@ set smartindent     " smart indenting works like autoindent but recognizes some
 set cindent         " works more cleverly than the previous two indents
 "set autoread        " automatically reload files when changed on disk
 set backupcopy=yes  " create a backup of files
+set backupdir=$VIM/vimfiles/backup//    " directory to store backups
+"set backupdir=$VIM\vimfiles\backup\\   " windows
 set clipboard=unnamed	" use system clipboard
-set directory-=$VIM/swap//    " don't store swap files in the current directory
+set directory-=$VIM/vimfiles/swap//    " don't store swap files in the current directory
+"set directory-=$VIM\vimfiles\swap\\   " windows
 set ignorecase      " case insensitive searching
 set smartcase       " use case sensitive search if there are any caps
 set incsearch       " search as you type
@@ -21,13 +25,14 @@ set hlsearch        " highlight search
 set laststatus=2    " always show statusline
 "set list            " show whitespace
 "set listchars=tab:?\ ,trail:·
+"set listchars=tab:>\ ,
 set ruler           " show cursor position in file
 set scrolloff=3     " minimum number of lines to keep above/below cursor
 set tabstop=4       " use a mix of tabs and spaces for to align to the closest
 set softtabstop=4   " tabstop, using backspace will behave like a tab appears
-set shiftwidth=4    "
-set shiftround		" round to the nearest tabstop
-set noexpandtab     "
+set shiftwidth=4    " how much to indent when shifting with >> and <<
+set shiftround	    " round to the nearest tabstop
+set expandtab       " convert tabs to spaces
 set showcmd         " show partial command in the last line of the screen
 set wildmenu        " command-line completion
 set wildmode=longest,list,full
@@ -60,6 +65,7 @@ set completeopt=menu,menuone,preview,noinsert
 
 if v:version >= 703
 	set undodir=$VIM/swap
+"set undodir=$VIM\\vimfiles\undo\\
 	set undofile
 
 	set colorcolumn=+1
@@ -83,6 +89,8 @@ nnoremap ]q :cnext<CR>
 nnoremap [q :cprev<CR>
 nnoremap <leader>e :copen<CR>
 nnoremap <leader>E :cclose<CR>
+nnoremap <leader>l :lopen<CR>
+nnoremap <leader>L :lclose<CR>
 nmap <S-j> 10j<CR>
 nmap <S-k> 10k<CR>
 map <leader>b :make!<CR><CR>
