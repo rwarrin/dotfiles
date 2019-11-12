@@ -120,3 +120,14 @@ set statusline+=[%{&fo}]\ 	" show format options
 set statusline+=c%c\ 	" column number
 set statusline+=\ %l,%L	" current line number, number of lines
 set statusline+=\ %P		" percentage through file
+
+" Custom keyword highlighting
+augroup customHighlights
+    au Syntax * syntax keyword customHighlightImportant IMPORTANT contained Ni
+    au Syntax * syntax keyword customHighlightNote NOTE contained Ni
+    au Syntax * syntax keyword customHighlightTodo TODO contained Ni
+    au Syntax * syntax cluster cCommentGroup add=customHighlightImportant
+    au Syntax * syntax cluster cCommentGroup add=customHighlightNote
+augroup END
+highlight customHighlightImportant term=bold ctermfg=1 gui=bold guifg=#ab4642
+highlight customHighlightNote term=bold ctermfg=2 gui=bold guifg=#a1b56c
