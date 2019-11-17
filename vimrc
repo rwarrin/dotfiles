@@ -129,6 +129,9 @@ augroup customHighlights
     au Syntax * syntax keyword customHighlightTodo TODO contained Ni
     au Syntax * syntax cluster cCommentGroup add=customHighlightImportant
     au Syntax * syntax cluster cCommentGroup add=customHighlightNote
-    au Syntax * highlight customHighlightImportant term=bold ctermfg=1 gui=bold guifg=#ab4642
-    au Syntax * highlight customHighlightNote term=bold ctermfg=2 gui=bold guifg=#a1b56c
+    au Syntax * syntax cluster cCommentGroup add=customHighlightTodo
+    au Syntax * highlight customHighlightImportant term=bold,underline cterm=bold,underline ctermfg=1 gui=bold,underline guifg=#ab4642
+    au Syntax * highlight customHighlightNote term=bold cterm=bold ctermfg=2 gui=bold guifg=#a1b56c
+    au Syntax * highlight customHighlightTodo term=bold cterm=bold ctermfg=3 gui=bold guifg=#f7ca88
 augroup END
+
