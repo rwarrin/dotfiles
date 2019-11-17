@@ -123,11 +123,12 @@ set statusline+=\ %P		" percentage through file
 
 " Custom keyword highlighting
 augroup customHighlights
+    au!
     au Syntax * syntax keyword customHighlightImportant IMPORTANT contained Ni
     au Syntax * syntax keyword customHighlightNote NOTE contained Ni
     au Syntax * syntax keyword customHighlightTodo TODO contained Ni
     au Syntax * syntax cluster cCommentGroup add=customHighlightImportant
     au Syntax * syntax cluster cCommentGroup add=customHighlightNote
+    au Syntax * highlight customHighlightImportant term=bold ctermfg=1 gui=bold guifg=#ab4642
+    au Syntax * highlight customHighlightNote term=bold ctermfg=2 gui=bold guifg=#a1b56c
 augroup END
-highlight customHighlightImportant term=bold ctermfg=1 gui=bold guifg=#ab4642
-highlight customHighlightNote term=bold ctermfg=2 gui=bold guifg=#a1b56c
