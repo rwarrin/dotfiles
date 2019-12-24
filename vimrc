@@ -97,6 +97,7 @@ map <leader>b :make!<CR><CR>
 nnoremap <M-left> :bp<CR>
 nnoremap <M-right> :bn<CR>
 nnoremap <S-F8> :TagbarToggle<CR>
+nnoremap <leader>h :call HeaderToggle()<CR>
 
 " plugin settings
 let NERDTreeShowHidden=1    " show hidden files in NERDTree
@@ -135,3 +136,24 @@ augroup customHighlights
     au Syntax * highlight customHighlightTodo term=bold cterm=bold ctermfg=3 gui=bold guifg=#f7ca88
 augroup END
 
+" Quickswitch between header and source file
+function! HeaderToggle() " bang for overwrite when saving vimrc
+    let file_path = expand("%")
+    let file_name = expand("%<")
+    let extension = split(file_path, '\.')[-1] " '\.' is how you really split on dot
+
+    if extension == "cpp" || extension == "c"
+        let next_file = join([file_name, ".h"], "")
+        if filereadable(next_file)
+            :e %<.h
+        endif
+    elseif extension == "h"
+        let c_next_file = join([file_name, ".c"], "")
+        let cpp_next_file = join([file_name, ".cpp"], "")
+        if filereadable(c_next_file)
+            :e %<.c
+        elseif filereadable(cpp_next_file)
+            :e %<.cpp
+        endif
+    endif
+endfunction
