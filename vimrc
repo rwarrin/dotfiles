@@ -146,6 +146,9 @@ function! HeaderToggle() " bang for overwrite when saving vimrc
         let next_file = join([file_name, ".h"], "")
         if filereadable(next_file)
             :e %<.h
+        else
+            " Default to creating a .h header file if it doesn't already exist
+            :e %<.h
         endif
     elseif extension == "h"
         let c_next_file = join([file_name, ".c"], "")
@@ -153,6 +156,9 @@ function! HeaderToggle() " bang for overwrite when saving vimrc
         if filereadable(c_next_file)
             :e %<.c
         elseif filereadable(cpp_next_file)
+            :e %<.cpp
+        else
+            " Default to creating a .cpp source file if it doesn't already exist
             :e %<.cpp
         endif
     endif
