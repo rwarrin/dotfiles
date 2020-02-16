@@ -106,6 +106,10 @@ let NERDTreeShowHidden=1    " show hidden files in NERDTree
 autocmd filetype git,*commit* setlocal spell
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
+" use ripgrep for greping - use the full path to rg.exe if it is not in the path
+set grepprg=rg\ --no-heading\ --vimgrep
+set grepformat=%f:%l:%c:%m
+
 " status line
 set statusline=%*
 set statusline+=[%N]	" buffer number
