@@ -188,3 +188,8 @@ function! DoWindowSwap()
 endfunction
 nmap <silent> <leader>mb :call MarkWindowSwap()<CR>
 nmap <silent> <leader>sb :call DoWindowSwap()<CR>
+
+" Bindings for functions exported by gvimwindowstyles.dll
+nnoremap <leader>F :call libcallnr("gvimwindowstyles.dll", "ToggleFullscreen", 0)<CR>
+command Sticky :call libcallnr("gvimwindowstyles.dll", "ToggleStickyWindow", 0)
+command -nargs=1 Opacity :call libcallnr("gvimwindowstyles.dll", "SetOpacity", <args>)
