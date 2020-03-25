@@ -24,8 +24,8 @@ set incsearch       " search as you type
 set hlsearch        " highlight search
 set laststatus=2    " always show statusline
 "set list            " show whitespace
-"set listchars=tab:?\ ,trail:·
-"set listchars=tab:>\ ,
+"set listchars=tab:›\ ,trail:•
+"set listchars=tab:›\ ,trail:·
 set ruler           " show cursor position in file
 set scrolloff=3     " minimum number of lines to keep above/below cursor
 set tabstop=4       " use a mix of tabs and spaces for to align to the closest
