@@ -87,8 +87,8 @@ map <silent> <leader>V :source D:/Development/Vim/_vimrc<CR>:filetype detect<CR>
 nmap <leader>gt :GitGutterToggle<CR>
 nnoremap ]q :cnext<CR>
 nnoremap [q :cprev<CR>
-nnoremap <leader>e :copen<CR>
-nnoremap <leader>E :cclose<CR>
+nnoremap <leader>e :call ToggleQuickFixHeight()<CR>
+nnoremap <leader>E :let g:custom_quick_fix_height = 40<CR>:cclose<CR>
 nnoremap <leader>l :lopen<CR>
 nnoremap <leader>L :lclose<CR>
 nmap <S-j> 10j<CR>
@@ -193,3 +193,15 @@ nmap <silent> <leader>sb :call DoWindowSwap()<CR>
 nnoremap <leader>F :call libcallnr("gvimwindowstyles.dll", "ToggleFullscreen", 0)<CR>
 command! Sticky :call libcallnr("gvimwindowstyles.dll", "ToggleStickyWindow", 0)
 command! -nargs=1 Opacity :call libcallnr("gvimwindowstyles.dll", "SetOpacity", <args>)
+
+" Toggle the size of the quick fix window
+let g:custom_quick_fix_height = 40
+function! ToggleQuickFixHeight()
+    if g:custom_quick_fix_height == 10
+        let g:custom_quick_fix_height = 40
+    else
+        let g:custom_quick_fix_height = 10
+    endif
+
+    execute "copen" g:custom_quick_fix_height
+endfunction
