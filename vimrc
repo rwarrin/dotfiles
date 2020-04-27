@@ -82,7 +82,6 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 nmap <leader>d :NERDTreeToggle<CR>
-nmap <leader>s :sort<CR>
 map <silent> <leader>V :source D:/Development/Vim/_vimrc<CR>:filetype detect<CR>:exe ":echo '_vimrc reloaded'"<CR>
 nmap <leader>gt :GitGutterToggle<CR>
 nnoremap ]q :cnext<CR>
@@ -98,6 +97,7 @@ nnoremap <M-left> :bp<CR>
 nnoremap <M-right> :bn<CR>
 nnoremap <S-F8> :TagbarToggle<CR>
 nnoremap <leader>h :call HeaderToggle()<CR>
+nnoremap <silent> <leader>sr :call setreg(nr2char(getchar()), @*)<CR>
 
 " plugin settings
 let NERDTreeShowHidden=1    " show hidden files in NERDTree
@@ -186,8 +186,8 @@ function! DoWindowSwap()
     "Hide and open so that we aren't prompted and keep history
     exe 'hide buf' markedBuf 
 endfunction
-nmap <silent> <leader>mb :call MarkWindowSwap()<CR>
-nmap <silent> <leader>sb :call DoWindowSwap()<CR>
+nmap <silent> <leader>bm :call MarkWindowSwap()<CR>
+nmap <silent> <leader>bs :call DoWindowSwap()<CR>
 
 " Bindings for functions exported by gvimwindowstyles.dll
 nnoremap <leader>F :call libcallnr("gvimwindowstyles.dll", "ToggleFullscreen", 0)<CR>
