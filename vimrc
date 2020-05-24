@@ -186,8 +186,8 @@ function! DoWindowSwap()
     "Hide and open so that we aren't prompted and keep history
     exe 'hide buf' markedBuf 
 endfunction
-nmap <silent> <leader>bm :call MarkWindowSwap()<CR>
-nmap <silent> <leader>bs :call DoWindowSwap()<CR>
+nmap <silent> <leader>mb :call MarkWindowSwap()<CR>
+nmap <silent> <leader>sb :call DoWindowSwap()<CR>
 
 " Bindings for functions exported by gvimwindowstyles.dll
 nnoremap <leader>F :call libcallnr("gvimwindowstyles.dll", "ToggleFullscreen", 0)<CR>
