@@ -205,3 +205,6 @@ function! ToggleQuickFixHeight()
 
     execute "copen" g:custom_quick_fix_height
 endfunction
+
+"ctrlp config
+let g:ctrlp_switch_buffer = 0
