@@ -208,3 +208,9 @@ endfunction
 
 "ctrlp config
 let g:ctrlp_switch_buffer = 0
+
+" math.dll
+command! -nargs=1 Calc :redir @c | :echo libcall("math.dll", "Calc", <args>) | :redir END
+command! -nargs=1 ToBinary :redir @c | :echo libcall("math.dll", "ToBinary", <args>) | :redir END
+command! -nargs=1 ToHex :redir @c | :echo libcall("math.dll", "ToHex", <args>) | :redir END
+command! -nargs=1 FromHex :redir @c | :echo libcall("math.dll", "FromHex", <args>) | :redir END
