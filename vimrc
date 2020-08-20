@@ -214,3 +214,8 @@ command! -nargs=1 Calc :redir @c | :echo libcall("math.dll", "Calc", <args>) | :
 command! -nargs=1 ToBinary :redir @c | :echo libcall("math.dll", "ToBinary", <args>) | :redir END
 command! -nargs=1 ToHex :redir @c | :echo libcall("math.dll", "ToHex", <args>) | :redir END
 command! -nargs=1 FromHex :redir @c | :echo libcall("math.dll", "FromHex", <args>) | :redir END
+command! ResetCalc :echo libcall("math.dll", "CalcReset", 0)
+command! CalcInfo :echo libcall("math.dll", "Info", 0)
+"nnoremap <silent> <leader>c :Calc (input("Calc: "))<CR>
+nnoremap <leader>c :Calc (input("Calc: "))<CR>
+nnoremap <silent> <leader>C :Calc @*<CR> 
