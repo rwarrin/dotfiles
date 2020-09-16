@@ -87,7 +87,8 @@ nmap <leader>gt :GitGutterToggle<CR>
 nnoremap ]q :cnext<CR>
 nnoremap [q :cprev<CR>
 nnoremap <leader>e :copen 10<CR>
-nnoremap <leader>E :copen 40<CR>
+nnoremap <leader>EE :copen 40<CR>
+nnoremap <leader>Ee :copen 3<CR>
 nnoremap <leader>l :lopen<CR>
 nnoremap <leader>L :lclose<CR>
 nmap <S-j> 10j<CR>
